@@ -3,16 +3,25 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HelloComponent } from './hello/hello.component';
+import { HelloService } from './hello.service';
+import { MatTableModule } from '@angular/material/table';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { HttpClientModule} from  '@angular/common/http';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HelloComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+        MatTableModule,
+        HttpClientModule,
+    MatToolbarModule  
   ],
-  providers: [],
+  providers: [HelloService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
